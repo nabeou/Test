@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+        This file is part of the Squashtest platform.
+        Copyright (C) 2011 - 2016 Henix
+
+        See the NOTICE file distributed with this work for additional
+        information regarding copyright ownership.
+
+        This is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Lesser General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+
+        this software is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU Lesser General Public License for more details.
+
+        You should have received a copy of the GNU Lesser General Public License
+        along with this software.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<Configuration status="error">	
+  <!-- <Properties>
+    <Property name="maven.logging.root.level">INFO</Property>
+    <Property name="org.squashtest.ta.plugin.level">INFO</Property>
+    <Property name="org.squashtest.ta.main.components.level">INFO</Property>
+  </Properties> -->
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    <File name="logFile" fileName="logs/engine.txt" append="false">
+      <PatternLayout>
+        <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+      </PatternLayout>
+    </File>
+	</Appenders>
+  <Loggers>
+	<!--  Root Logger configuration  -->
+    <Root level="debug">
+      <Appender-ref ref="console"/>
+      <Appender-ref ref="logFile"/>
+	</Root>
+  </Loggers>
+</Configuration>
